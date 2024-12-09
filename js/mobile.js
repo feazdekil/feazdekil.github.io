@@ -71,5 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-window.onload = () => alert("Welcome to my Blue Lock website!");
+window.onload = () => {
+  if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
+    alert("Welcome to my Blue Lock website!");
+  }
+};
+
 
