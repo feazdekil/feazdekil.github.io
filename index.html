@@ -1,90 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blue Lock</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="css/mobile.css"
-      media="screen and (max-width : 568px)"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Lock Introduction</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/mobile.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <div id="header">
-      <a href="index.html" class="logo">
-        <img src="images/logo.jpg" alt="Blue Lock Logo" />
-      </a>
-      <ul id="navigation">
-        <li class="selected">
-          <a href="index.html">home</a>
-        </li>
-        <li>
-          <a href="about.html">about</a>
-        </li>
-        <li>
-          <a href="gallery.html">gallery</a>
-        </li>
-      </ul>
+        <a href="index.html" class="logo">
+            <img src="images/blue-lock-logo.jpg" alt="Blue Lock Logo">
+        </a>
+        <ul id="navigation">
+            <li class="selected"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="characters.html">Characters</a></li>
+        </ul>
     </div>
-      <div id="featured">
-        <img src="images/blue-lock.jpg" alt="Blue Lock Hero Image" />
-        <div>
-          <h2>Introducing Blue Lock</h2>
-          <span
-            >Have you hear of the anime Blue Lock Professor Ozaydin? Here, they
-            face challenges, defeat rivals, and aim to be the best player they
-            can be</span
-          >
-          <a href="gallery.html" class="more">meet the players</a>
+    <div id="body">
+        <div id="featured">
+            <div class="overlay">
+                <h2>Welcome to Blue Lock</h2>
+                <p>Explore the world of intense soccer competition.</p>
+                <a href="characters.html" class="more">Meet the Players</a>
+            </div>
         </div>
-      </div>
-      <ul>
-        <li>
-          <img
-            src="images/jinpachi.jpg"
-            alt="Ego Jinpachi"
-            id="jinpachi"
-            class="character-image"
-          />
-          <span>Ego Jinpachi</span>
-        </li>
-        <li>
-          <img
-            src="images/isagi.jpg"
-            alt="Yoichi Isagi"
-            id="isagi"
-            class="character-image"
-          />
-          <span>Yoichi Isagi</span>
-        </li>
-        <li>
-          <img
-            src="images/bachira.jpg"
-            alt="Meguru Bachira"
-            id="bachira"
-            class="character-image"
-          />
-          <span>Meguru Bachira</span>
-        </li>
-      </ul>
+        
+        </div>
+        
+        </div>
+        <section id="characters">
+            <h3>Featured Players</h3>
+            <div class="character-grid">
+                <div class="character">
+                    <img src="images/isagi-yoichi.jpg" alt="Isagi Yoichi" class="character-img" onclick="showModal('images/isagi-yoichi.jpg')">
+                    <p>Isagi Yoichi</p>
+                </div>
+                <div class="character">
+                    <img src="images/nagi-seishiro.jpg" alt="Nagi Seishiro" class="character-img" onclick="showModal('images/nagi-seishiro.jpg')">
+                    <p>Nagi Seishiro</p>
+                </div>
+                <div class="character">
+                    <img src="images/rin-itoshi.jpg" alt="Rin Itoshi" class="character-img" onclick="showModal('images/rin-itoshi.jpg')">
+                    <p>Rin Itoshi</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
-      <!-- Modal -->
-      <div id="image-modal" class="modal">
+    <!-- Modal for viewing enlarged images -->
+    <div id="modal" class="modal" onclick="closeModal()">
         <span class="close">&times;</span>
-        <img class="modal-content" id="modal-image" />
+        <img class="modal-content" id="modal-img">
         <div id="caption"></div>
-      </div>
     </div>
 
     <div id="footer">
-      <div>
-        <p>&copy; 2024 by Blue Lock. All rights reserved.</p>
-        <p>SM Feaz Habib Id:24224009</p>
-      </div>
+        <div>
+            <p>&copy; 2024 Blue Lock Fan Website. All rights reserved.</p>
+            <p>Created by: Habib SM Feaz | Student ID: 24224009</p>
+        </div>
     </div>
-  </body>
+    <script src="js/modal.js"></script>
+</body>
 </html>
