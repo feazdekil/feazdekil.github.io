@@ -1,50 +1,73 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Smooth hover effect for buttons and images
-    const meetButton = document.querySelector(".more");
-    const characters = document.querySelectorAll(".character img");
+window.onload = function () {
+  var getNavi = document.getElementById("navigation");
 
-    if (meetButton) {
-        meetButton.addEventListener("mouseover", function () {
-            meetButton.style.backgroundColor = "#1e75c7";
-        });
-        meetButton.addEventListener("mouseout", function () {
-            meetButton.style.backgroundColor = "#2b8bd9";
-        });
+  var mobile = document.createElement("span");
+  mobile.setAttribute("id", "mobile-navigation");
+  getNavi.parentNode.insertBefore(mobile, getNavi);
+
+  document.getElementById("mobile-navigation").onclick = function () {
+    var a = getNavi.getAttribute("style");
+    if (a) {
+      getNavi.removeAttribute("style");
+      document.getElementById("mobile-navigation").style.backgroundImage =
+        "url(images/mobile-menu.png)";
+    } else {
+      getNavi.style.display = "block";
+      document.getElementById("mobile-navigation").style.backgroundImage =
+        "url(images/mobile-close.png)";
     }
+  };
+  var getElm = getNavi.getElementsByTagName("LI");
+  for (var i = 0; i < getElm.length; i++) {
+    if (getElm[i].children.length > 1) {
+      var smenu = document.createElement("span");
+      smenu.setAttribute("class", "mobile-submenu");
+      smenu.setAttribute("OnClick", "submenu(" + i + ")");
+      getElm[i].appendChild(smenu);
+    }
+  }
+  submenu = function (i) {
+    var sub = getElm[i].children[1];
+    var b = sub.getAttribute("style");
+    if (b) {
+      sub.removeAttribute("style");
+      getElm[i].lastChild.style.backgroundImage =
+        "url(images/mobile-expand.png)";
+      getElm[i].lastChild.style.backgroundColor = "rgba(11, 163, 156, 0.7)";
+    } else {
+      sub.style.display = "block";
+      getElm[i].lastChild.style.backgroundImage =
+        "url(images/mobile-collapse.png)";
+      getElm[i].lastChild.style.backgroundColor = "rgba(0,0,0,0.8)";
+    }
+  };
+};
 
-    characters.forEach((img) => {
-        img.addEventListener("mouseover", function () {
-            img.style.transform = "scale(1.1)";
-        });
-        img.addEventListener("mouseout", function () {
-            img.style.transform = "scale(1)";
-        });
+// Modal functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("image-modal");
+  const modalImage = document.getElementById("modal-image");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".modal .close");
+
+  // Add click event listeners to all images with the 'character-image' class
+  document.querySelectorAll(".character-image").forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImage.src = img.src;
+      captionText.innerText = img.alt;
     });
-});
-function showModal(imageSrc) {
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
+  });
 
-    modal.style.display = "block";
-    modalImg.src = imageSrc;
-}
-
-function closeModal() {
-    const modal = document.getElementById("modal");
+  // Close modal when 'x' is clicked
+  closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
-}
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".article h3");
-    sections.forEach((section) => {
-        section.addEventListener("click", () => {
-            const nextParagraphs = section.nextElementSibling;
-            if (nextParagraphs) {
-                nextParagraphs.style.display =
-                    nextParagraphs.style.display === "none" ? "block" : "none";
-            }
-        });
-    });
+  // Close modal when clicking outside the image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });
-
-
