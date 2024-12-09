@@ -31,6 +31,14 @@
       </ul>
     </div>
     <div id="body">
+      <div id="notification" style="position:fixed; bottom:20px; right:20px; background:#007BFF; color:white; padding:10px 15px; border-radius:5px; display:none;">
+  Welcome to my Blue Lock website!
+</div>
+<script>
+  const notification = document.getElementById("notification");
+  notification.style.display = "block";
+  setTimeout(() => notification.style.display = "none", 3000);
+</script>
       <div id="featured">
         <img src="images/blue-lock.jpg" alt="Blue Lock Hero Image" />
         <div>
@@ -84,7 +92,7 @@
     <div id="footer">
       <div>
         <p>&copy; 2024 by Blue Lock. All rights reserved.</p>
-        <p></p>
+        <p>SM Feaz Habib Id:24224009</p>
       </div>
     </div>
   </body>
