@@ -71,3 +71,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+window.onload = () => alert("Welcome to my Blue Lock website!");
+
