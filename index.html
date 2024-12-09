@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Lock</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/mobile.css"
+      media="screen and (max-width : 568px)"
+    />
+    <script type="text/javascript" src="js/mobile.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Blue Lock Logo" />
+      </a>
+      <ul id="navigation">
+        <li class="selected">
+          <a href="index.html">home</a>
+        </li>
+        <li>
+          <a href="about.html">about</a>
+        </li>
+        <li>
+          <a href="gallery.html">gallery</a>
+        </li>
+      </ul>
+    </div>
+    <div id="body">
+      <div id="featured">
+        <img src="images/blue-lock.jpg" alt="Blue Lock Hero Image" />
+        <div>
+          <h2>Introducing Blue Lock</h2>
+          <span
+            >Have you hear of the anime Blue Lock Professor Ozaydin? Here, they
+            face challenges, defeat rivals, and aim to be the best player they
+            can be</span
+          >
+          <a href="gallery.html" class="more">meet the players</a>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <img
+            src="images/jinpachi.jpg"
+            alt="Ego Jinpachi"
+            id="jinpachi"
+            class="character-image"
+          />
+          <span>Ego Jinpachi</span>
+        </li>
+        <li>
+          <img
+            src="images/isagi.jpg"
+            alt="Yoichi Isagi"
+            id="isagi"
+            class="character-image"
+          />
+          <span>Yoichi Isagi</span>
+        </li>
+        <li>
+          <img
+            src="images/bachira.jpg"
+            alt="Meguru Bachira"
+            id="bachira"
+            class="character-image"
+          />
+          <span>Meguru Bachira</span>
+        </li>
+      </ul>
+
+      <!-- Modal -->
+      <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image" />
+        <div id="caption"></div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div>
+        <p>&copy; 2024 by Blue Lock. All rights reserved.</p>
+        <p></p>
+      </div>
+    </div>
+  </body>
+</html>
